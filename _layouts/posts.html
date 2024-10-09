@@ -28,13 +28,26 @@ layout: default
 
     <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>
-
+<!-- inline config -->
 <script>
-    MathJax = {
-        tex: {
-            inlineMath: [['$', '$'], ['\\(', '\\)']]
-        }
-    };
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      macros: {
+      	RR: "{\\bf R}",
+      	bold: ["{\\bf #1}", 1],
+        indep: "{\\perp \\!\\!\\! \\perp}",
+    	}
+    },
+    svg: {
+    fontCache: 'global'
+  	},
+  };
 </script>
-<script src=”https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id=”MathJax-script” async src=”https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<!-- load MathJax -->
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
